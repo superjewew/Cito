@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="18sp"
+        android:text="BMI = Berat badan / (Tinggi badan)^2"/>
+
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:text="Satuan:"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="18sp"/>
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Berat Badan: Kg\nTinggi Badan: m\nBMI: kg/m2"/>
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="18sp"
+        android:text="Interpretasi"/>
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="BMI &lt;18.5 : underweight\nBMI 18.5-23 : acceptable risk\nBMI 23-27.5 : Increased risk\n>27.5 : higher risk"/>
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/colorTextBlack"
+        android:textSize="18sp"
+        android:text="Referensi"/>
+    <com.rey.material.widget.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/ref_bmi"
+        android:autoLink="web"/>
+
+</LinearLayout>

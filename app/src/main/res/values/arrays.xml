@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="anak">
+        <item name="bmi">BMI</item>
+        <!--<item name="kuisioner">Kuisioner Perkembangan</item>-->
+    </string-array>
+    <string-array name="anak_desc">
+        <item name="bmi_desc">Massa indeks tubuh</item>
+        <!--<item name="kuisioner_desc">Perkembangan Anak</item>-->
+    </string-array>
+    <string-array name="geriatri">
+        <item name="depression">Skala Depresi</item>
+    </string-array>
+    <string-array name="geriatri_desc">
+        <item name="depression_desc">Penyaringan awal terhadap depresi yang dialami oleh pasien geriatri.</item>
+    </string-array>
+    <string-array name="pulmonologi">
+        <item name="curb">Skor CURB</item>
+        <!--<item name="port">Skor PORT</item>-->
+    </string-array>
+    <string-array name="pulmonologi_desc">
+        <item name="curb_desc">Memprediksi angka kematian pada CAP. Skor ini juga membantu menetapkan pasien rawat inap.</item>
+        <!--<item name="port_desc">Menilai derajat keparahan penyakit pneumonia sesuai guidelines Perhimpuan Dokter Paru Indonesia (PDPI).</item>-->
+    </string-array>
+    <string-array name="umum"/>
+    <string-array name="umum_desc"/>
+</resources>
