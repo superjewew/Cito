@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.meyourours.cito.EBMFragment;
 import com.meyourours.cito.R;
 import com.meyourours.cito.fragment.FormulaMainFragment;
 
@@ -90,7 +91,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_dosis) {
             switchFragment(new FormulaMainFragment());
         } else if (id == R.id.nav_ebm) {
-            switchFragment(new FormulaMainFragment());
+            switchFragment(new EBMFragment());
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

@@ -66,4 +66,9 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body1</item>
         <item name="android:textColor">@color/abc_primary_text_material_light</item>
     </style>
+
+    <style name="LightSwitch" parent="Material.Widget.Switch">
+        <item name="sw_trackColor">@drawable/color_track_light</item>
+        <item name="sw_thumbColor">@drawable/color_thumb_light</item>
+    </style>
 </resources>

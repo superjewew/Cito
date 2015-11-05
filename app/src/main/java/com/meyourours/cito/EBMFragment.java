@@ -2,10 +2,15 @@ package com.meyourours.cito;
 
 
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.meyourours.cito.adapter.EBMAdapter;
+import com.rey.material.widget.Spinner;
 
 
 /**
@@ -59,7 +64,23 @@ public class EBMFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ebm, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_ebm, container, false);
+        View listHeader = inflater.inflate(R.layout.layout_list_ebm_header, null);
+        View listFooter = inflater.inflate(R.layout.layout_list_ebm_footer, null);
+
+        Spinner spinnerDisease = (Spinner) listHeader.findViewById(R.id.spinner_disease);
+        ArrayAdapter<String> adapterDisease = new ArrayAdapter<>(getActivity(), R.layout.row_spn, new String[]{"Test Disease"});
+        adapterDisease.setDropDownViewResource(R.layout.row_spn_dropdown);
+        spinnerDisease.setAdapter(adapterDisease);
+
+        ListView ebmList = (ListView) rootView.findViewById(R.id.list_ebm);
+        ebmList.addHeaderView(listHeader);
+        ebmList.addFooterView(listFooter);
+
+        EBMAdapter adapter = new EBMAdapter(getActivity(), new String[]{"test"});
+        ebmList.setAdapter(adapter);
+
+        return rootView;
     }
 
 

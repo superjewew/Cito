@@ -3,24 +3,16 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
     <com.rey.material.widget.Spinner
         android:id="@+id/spinner_disease"
         style="@style/LightSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minWidth="128dp"
         android:padding="8dp"
-        android:layout_marginLeft="8dp"
         app:spn_label="Nama Penyakit"/>
-    <com.rey.material.widget.Spinner
-        android:id="@+id/spinner_test"
-        style="@style/LightSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="128dp"
-        android:padding="8dp"
-        android:layout_marginLeft="8dp"
-        app:spn_label="Jenis Tes"/>
 
 </LinearLayout>
