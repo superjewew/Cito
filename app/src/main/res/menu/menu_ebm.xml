@@ -4,7 +4,6 @@
     <item android:id="@+id/action_calculate"
           android:title="@string/action_calculate"
           android:orderInCategory="100"
-          android:icon=""
-          app:showAsAction="always"/>
+          app:showAsAction="always|withText"/>
 
 </menu>

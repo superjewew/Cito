@@ -59,7 +59,7 @@ public class Formulas {
         if(testResult) {
             LR = sensitivity / (1 - specificity);
         } else {
-            LR = 1 - sensitivity/specificity;
+            LR = (1 - sensitivity)/specificity;
         }
         float preTestOdds = preTestProb / (1 - preTestProb);
         float postTestOdds = preTestOdds * LR;
