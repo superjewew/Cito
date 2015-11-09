@@ -29,4 +29,5 @@
     <string name="ref_depresi"><a href="https://www.healthcare.uiowa.edu/igec/tools/depression/GDS.pdf">https://www.healthcare.uiowa.edu/igec/tools/depression/GDS.pdf</a></string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_home">Cito</string>
+    <string name="action_calculate">Hitung</string>
 </resources>

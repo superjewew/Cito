@@ -7,10 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.meyourours.cito.adapter.EBMAdapter;
 import com.rey.material.widget.Spinner;
+
+import java.util.ArrayList;
 
 
 /**
@@ -77,8 +80,19 @@ public class EBMFragment extends Fragment {
         ebmList.addHeaderView(listHeader);
         ebmList.addFooterView(listFooter);
 
-        EBMAdapter adapter = new EBMAdapter(getActivity(), new String[]{"test"});
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Test Disease");
+        final EBMAdapter adapter = new EBMAdapter(getActivity(), list);
         ebmList.setAdapter(adapter);
+
+        Button buttonAdd = (Button) listFooter.findViewById(R.id.button_ebm_add);
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter.add("Test 2");
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         return rootView;
     }

@@ -24,9 +24,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:inputType="number"
+        android:enabled="false"
         android:hint="Sensitivitas"
-        app:et_labelEnable="true"
-        android:visibility="gone"/>
+        app:et_labelEnable="true"/>
     <com.rey.material.widget.EditText
         style="@style/Material.Widget.EditText.Light"
         android:id="@+id/edit_specitivity"
@@ -38,7 +38,7 @@
         android:inputType="number"
         android:hint="Spesifisitas"
         app:et_labelEnable="true"
-        android:visibility="gone"/>
+        android:enabled="false"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
