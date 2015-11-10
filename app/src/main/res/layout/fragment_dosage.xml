@@ -28,7 +28,7 @@
         android:layout_marginRight="8dp"
         android:inputType="number"
         android:enabled="false"
-        android:hint="Umur"
+        android:hint="Umur (tahun)"
         app:et_labelEnable="true"/>
     <com.rey.material.widget.EditText
         style="@style/Material.Widget.EditText.Light"
@@ -39,7 +39,7 @@
         android:layout_margin="8dp"
         android:inputType="number"
         android:enabled="false"
-        android:hint="Berat"
+        android:hint="Berat (kg)"
         app:et_labelEnable="true"/>
     <com.rey.material.widget.TextView
         android:id="@+id/label_dosage"
@@ -54,7 +54,7 @@
         android:textColor="@color/colorPrimaryDark"/>
 
     <com.rey.material.widget.TextView
-        android:id="@+id/text_curb"
+        android:id="@+id/text_dosage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
