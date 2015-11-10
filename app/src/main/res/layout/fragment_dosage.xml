@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.meyourours.cito.fragment.DosageFragment"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.rey.material.widget.Spinner
+        android:id="@+id/spinner_medicine"
+        style="@style/LightSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minWidth="128dp"
+        android:padding="8dp"
+        app:spn_label="Nama Obat"/>
+    <com.rey.material.widget.EditText
+        style="@style/Material.Widget.EditText.Light"
+        android:id="@+id/edit_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_medicine"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="Umur (tahun)"
+        app:et_labelEnable="true"/>
+    <com.rey.material.widget.EditText
+        style="@style/Material.Widget.EditText.Light"
+        android:id="@+id/edit_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_age"
+        android:layout_margin="8dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="Berat (kg)"
+        app:et_labelEnable="true"/>
+    <com.rey.material.widget.TextView
+        android:id="@+id/label_dosage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/edit_weight"
+        android:text="Dosis"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <com.rey.material.widget.TextView
+        android:id="@+id/text_dosage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:layout_below="@+id/edit_weight"
+        android:layout_toRightOf="@+id/label_dosage"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorTextWhite"
+        android:background="@color/colorPrimaryDark"/>
+
+</RelativeLayout>

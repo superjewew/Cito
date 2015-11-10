@@ -24,4 +24,46 @@
     </string-array>
     <string-array name="umum"/>
     <string-array name="umum_desc"/>
+    <string-array name="dosage_medicine_name">
+        <item name="aminofilin">"Aminofilin 200 mg</item>
+        <item name="amitriptilin">Amitriptilin 25 mg</item>
+        <item name="ambroxol">Ambroxol 30 mg</item>
+        <item name="ambroxol_syr">Ambroxol syr 15 mg</item>
+        <item name="amox500">Amox 500 mg</item>
+        <item name="amox250">Amox 250 mg</item>
+        <item name="amoxsyr">Amox syr kering 125 mg</item>
+        <item name="antalgin">Antalgin (metampiron) 500 mg</item>
+        <item name="antasida">Antasida doen tablet kombinasi (400 mg)</item>
+        <item name="antasida_doen">Antasida doen suspensi</item>
+        <item name="anti_haemoroid">Anti haemoroid suppo</item>
+        <item name="vit_c">Vit c 50 mg</item>
+        <item name="asam_mefenamat">Asam mefenamat 500 mg</item>
+        <item name="asam_folat">Asam folat 1 mg</item>
+        <item name="alprazolam">Alprazolam (0.5 dan 1 mg)</item>
+        <item>Antifungal Cream</item>
+        <item>Arterakine (DHP)</item>
+        <item>Cetirizine 10 mg</item>
+        <item>Ibuprofen 400 mg</item>
+        <item>Kotrimoksasol susp</item>
+        <item>Kotrimoksasol tab (480)</item>
+        <item>Cefadroxil 500 mg</item>
+        <item>Cefadroxil syr</item>
+        <item>Cefixime 100 mg</item>
+        <item>Dexametason 0.5 mg</item>
+        <item>Domperidone 10 mg</item>
+        <item>Efedrin HCL 25 mg</item>
+        <item>GG 100 mg</item>
+        <item>Ibuprofen 400 mg</item>
+        <item>Metoclopramide syr</item>
+        <item>Prednison 5 mg</item>
+        <item>Zink syr</item>
+        <item>Salbutamol 2 mg</item>
+        <item>Actived Attapulgit 600 mg</item>
+        <item>Betamethason cream</item>
+        <item>Besi sulfat tablet salut kombinasi</item>
+        <item>CTM 4 mg</item>
+        <item>Methylprednisolon 8 mg</item>
+        <item>Mebendazol</item>
+        <item>Ioratadine 10 mg</item>
+    </string-array>
 </resources>
