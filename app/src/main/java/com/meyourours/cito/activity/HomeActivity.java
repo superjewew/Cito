@@ -100,7 +100,7 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_SUBJECT, "Cito Feedback");
-            intent.putExtra(Intent.EXTRA_EMAIL, "aldoferly@citoapps.com");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"aldoferly@citoapps.com"});
             intent.setType("message/rfc822");
             Intent mailer = Intent.createChooser(intent, null);
             startActivity(mailer);
