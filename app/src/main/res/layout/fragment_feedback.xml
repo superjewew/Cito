@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.meyourours.cito.fragment.FeedbackFragment">
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_age"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="Berat (kg)"
+        app:et_labelEnable="true"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_age"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="Berat (kg)"
+        app:et_labelEnable="true"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_age"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:enabled="false"
+        android:hint="Berat (kg)"
+        app:et_labelEnable="true"/>
+
+</RelativeLayout>

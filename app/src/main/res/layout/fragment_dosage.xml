@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.meyourours.cito.fragment.DosageFragment"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -16,27 +15,27 @@
         android:layout_height="wrap_content"
         android:minWidth="128dp"
         android:padding="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         app:spn_label="Nama Obat"/>
     <com.rey.material.widget.EditText
-        style="@style/Material.Widget.EditText.Light"
+        style="@style/EditTextCito"
         android:id="@+id/edit_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner_medicine"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:inputType="number"
         android:enabled="false"
         android:hint="Umur (tahun)"
         app:et_labelEnable="true"/>
     <com.rey.material.widget.EditText
-        style="@style/Material.Widget.EditText.Light"
+        style="@style/EditTextCito"
         android:id="@+id/edit_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_age"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:inputType="number"
         android:enabled="false"
         android:hint="Berat (kg)"
@@ -46,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="12dp"
         android:layout_below="@+id/edit_weight"
         android:text="Dosis"

@@ -46,7 +46,7 @@ public class DosageFragment extends Fragment {
         String[] medicineName = getActivity().getResources().getStringArray(R.array.dosage_medicine_name);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), R.layout.row_spn, medicineName);
         medicineSpinner.setAdapter(adapter);
-
+        medicineSpinner.setSelection(0);
         medicineSpinner.setOnItemClickListener(new Spinner.OnItemClickListener() {
             @Override
             public boolean onItemClick(Spinner parent, View view, int position, long id) {
