@@ -55,7 +55,7 @@ public class RecentFormulaFragment extends Fragment implements LoaderManager.Loa
 
     private void fillData() {
         String[] from = new String[] {FormulaTable.COLUMN_NAME};
-        int[] to = new int[] {R.id.name};
+        int[] to = new int[] {R.id.label};
         getLoaderManager().initLoader(0, null, this);
         adapter = new SimpleCursorAdapter(getActivity(), R.layout.layout_list_recent, null, from, to, 0);
         listRecent.setAdapter(adapter);

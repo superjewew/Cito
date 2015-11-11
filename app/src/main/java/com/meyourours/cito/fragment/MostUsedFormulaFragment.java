@@ -61,7 +61,7 @@ public class MostUsedFormulaFragment extends Fragment implements AdapterView.OnI
 
     private void fillData() {
         String[] from = new String[] {FormulaTable.COLUMN_NAME};
-        int[] to = new int[] {R.id.name};
+        int[] to = new int[] {R.id.label};
         getLoaderManager().initLoader(0, null, this);
         adapter = new SimpleCursorAdapter(getActivity(), R.layout.layout_list_recent, null, from, to, 0);
         listMostUsed.setAdapter(adapter);

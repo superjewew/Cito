@@ -72,10 +72,12 @@ public class CountActivity extends ActionBarActivity {
 
         formulaFragmentName = formulaTitle.replace(" ", "");
         try {
-            formulaFragment = (FormulaFragment) Class.forName("com.meyourours.cito.formula." + formulaFragmentName + "Fragment").newInstance();
+            formulaFragment = (FormulaFragment) Class.forName("com.meyourours.cito.formula."
+                    + formulaFragmentName + "Fragment").newInstance();
             formulaId = formulaFragment.getmId();
             prefs = PreferenceManager.getDefaultSharedPreferences(this);
-            isFirstTime = prefs.getBoolean("com.meyourours.cito.formula." + formulaFragmentName + ".firstTime", true);
+            isFirstTime = prefs.getBoolean("com.meyourours.cito.formula." + formulaFragmentName
+                    + ".firstTime", true);
         } catch (Exception e) {
             e.printStackTrace();
         }
