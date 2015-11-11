@@ -1,0 +1,33 @@
+<resources xmlns:http="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">Cito</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_formula_list">FormulaListActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="title_activity_formula_detail">FormulaDetailActivity</string>
+    <string name="title_activity_bmi">bmi</string>
+    <string name="title_activity_count">CountActivity</string>
+    <string name="title_activity_skor_curb">SkorCURB</string>
+    <string name="title_activity_skor_port">SkorPORT</string>
+    <string name="title_activity_skala_depresi">SkalaDepresi</string>
+    <string name="ref_bmi"><a href="http://www.who.int/nutrition/publications/bmi_asia_strategies.pdf">http://www.who.int/nutrition/publications/bmi_asia_strategies.pdf</a></string>
+    <string name="ref_curb"><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1746657/?tool=pmcentrez">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1746657/?tool=pmcentrez</a></string>
+    <string name="ref_depresi"><a href="https://www.healthcare.uiowa.edu/igec/tools/depression/GDS.pdf">https://www.healthcare.uiowa.edu/igec/tools/depression/GDS.pdf</a></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_home">Cito</string>
+    <string name="action_calculate">Hitung</string>
+</resources>
