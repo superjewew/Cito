@@ -1,0 +1,110 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="com.meyourours.cito.formula.SkorBishopFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.rey.material.widget.Spinner
+                android:id="@+id/spinner_position"
+                style="@style/LightSpinner.Formula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:spn_label="Position"/>
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/spinner_consistency"
+                style="@style/LightSpinner.Formula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_position"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:spn_label="Consistency"/>
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/spinner_effacement"
+                style="@style/LightSpinner.Formula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_consistency"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:spn_label="Effacement"/>
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/spinner_dilation"
+                style="@style/LightSpinner.Formula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_effacement"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:spn_label="Dilation"/>
+
+            <com.rey.material.widget.Spinner
+                android:id="@+id/spinner_fetal"
+                style="@style/LightSpinner.Formula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinner_dilation"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:spn_label="Fetal Station"/>
+
+            <com.rey.material.widget.TextView
+                android:id="@+id/label_bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="12dp"
+                android:layout_below="@+id/spinner_fetal"
+                android:text="Skor Bishop"
+                android:textSize="32sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <com.rey.material.widget.TextView
+                android:id="@+id/text_bishop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:padding="8dp"
+                android:layout_below="@+id/spinner_fetal"
+                android:layout_toRightOf="@+id/label_bmi"
+                android:text="0"
+                android:textSize="24sp"
+                android:textColor="@color/colorTextWhite"
+                android:background="@color/colorPrimaryDark"/>
+
+            <com.rey.material.widget.TextView
+                android:id="@+id/text_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_below="@+id/label_bmi"
+                android:text=""
+                android:textSize="24sp"
+                android:textColor="@color/colorPrimaryDark"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/text_result"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

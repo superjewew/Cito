@@ -88,6 +88,7 @@ public class CountActivity extends ActionBarActivity {
             Cursor cursor = getContentResolver().query(formulaUri, null, null, null, null);
             cursor.moveToFirst();
             useCount = cursor.getInt(cursor.getColumnIndex(FormulaTable.COLUMN_USE_COUNT));
+            cursor.close();
         }
     }
 

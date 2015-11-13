@@ -21,4 +21,6 @@ public class FormulaTest {
     public void formulaValidator_Dosage_ReturnCorrectValue() {
         assertThat(Formulas.getDosage(2f, 40f), is(80f));
     }
+
+
 }

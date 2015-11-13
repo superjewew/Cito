@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="com.meyourours.cito.formula.SkorNuriFragment">
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_distance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:inputType="number"
+        android:hint="Jarak (meter)"
+        app:et_labelEnable="true"/>
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/edit_distance"
+        android:inputType="number"
+        android:hint="Umur (tahun)"
+        app:et_labelEnable="true"/>
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/edit_age"
+        android:inputType="number"
+        android:hint="Tinggi Badan (cm)"
+        app:et_labelEnable="true"/>
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/edit_height"
+        android:inputType="number"
+        android:hint="Berat (Kg)"
+        app:et_labelEnable="true"/>
+    <com.rey.material.widget.Spinner
+        android:id="@+id/spinner_sex"
+        style="@style/LightSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_weight"
+        android:minWidth="128dp"
+        android:padding="8dp"
+        android:layout_marginLeft="@dimen/spinner_margin"
+        android:layout_marginRight="@dimen/spinner_margin"
+        app:spn_label="Jenis Kelamin"/>
+    <com.rey.material.widget.TextView
+        android:id="@+id/label_o2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/spinner_sex"
+        android:text="Volume O2"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <com.rey.material.widget.TextView
+        android:id="@+id/text_o2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:layout_below="@+id/spinner_sex"
+        android:layout_toRightOf="@+id/label_o2"
+        android:text="0"
+        android:textSize="24sp"
+        android:textColor="@color/colorTextWhite"
+        android:background="@color/colorPrimaryDark"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/text_o2"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorPrimary"/>
+
+</RelativeLayout>

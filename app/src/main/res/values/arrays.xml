@@ -8,6 +8,12 @@
         <item name="bmi_desc">Massa indeks tubuh</item>
         <!--<item name="kuisioner_desc">Perkembangan Anak</item>-->
     </string-array>
+    <string-array name="fluid">
+        <item>Holliday Segar</item>
+    </string-array>
+    <string-array name="fluid_desc">
+        <item>Kebutuhan cairan per jam: 24 jam</item>
+    </string-array>
     <string-array name="geriatri">
         <item name="depression">Skala Depresi</item>
     </string-array>
@@ -24,6 +30,24 @@
     </string-array>
     <string-array name="umum"/>
     <string-array name="umum_desc"/>
+    <string-array name="kebidanan">
+        <item name="bishop">Skor Bishop</item>
+    </string-array>
+    <string-array name="kebidanan_desc">
+        <item>Memprediksi apakah kelahiran spontan dapat dilakukan atau tidak</item>
+    </string-array>
+    <string-array name="internal_medicine">
+        <item>Daldiyono</item>
+    </string-array>
+    <string-array name="internal_medicine_desc">
+        <item>Mengetahui berapa ml mengganti cairan pada pasien yang mengalami diare</item>
+    </string-array>
+    <string-array name="rehabilitasi">
+        <item>Skor Nuri</item>
+    </string-array>
+    <string-array name="rehabilitasi_desc">
+        <item>Menghitung maksimum intake oksigen setelah berlari selama 6 menit</item>
+    </string-array>
     <string-array name="dosage_medicine_name">
         <item name="aminofilin">"Aminofilin 200 mg</item>
         <item name="amitriptilin">Amitriptilin 25 mg</item>
@@ -65,5 +89,70 @@
         <item>Methylprednisolon 8 mg</item>
         <item>Mebendazol</item>
         <item>Ioratadine 10 mg</item>
+    </string-array>
+
+    <string-array name="age_array">
+        <item>20–34</item>
+        <item>35–39</item>
+        <item>40–44</item>
+        <item>45–49</item>
+        <item>50–54</item>
+        <item>55–59</item>
+        <item>60–64</item>
+        <item>65–69</item>
+        <item>70–74</item>
+        <item>>79</item>
+    </string-array>
+    <string-array name="sex_array">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
+    <string-array name="cholesterol_array">
+        <item>&lt;160</item>
+        <item>160–199</item>
+        <item>200–239</item>
+        <item>240–279</item>
+        <item>>280</item>
+    </string-array>
+    <string-array name="hdl_array">
+        <item>>60</item>
+        <item>50–59</item>
+        <item>40–49</item>
+        <item>&lt;40</item>
+    </string-array>
+    <string-array name="blood_pressure_array">
+        <item>&lt;120</item>
+        <item>120–129</item>
+        <item>130–139</item>
+        <item>140-159</item>
+        <item>>160</item>
+    </string-array>
+    <string-array name="position_array">
+        <item>Posterior</item>
+        <item>Intermediate</item>
+        <item>Anterior</item>
+    </string-array>
+    <string-array name="consistency_array">
+        <item>Firm</item>
+        <item>Intermediate</item>
+        <item>Soft</item>
+    </string-array>
+    <string-array name="effacement_array">
+        <item>0–30%</item>
+        <item>31–50%</item>
+        <item>51–80%</item>
+        <item>80%</item>
+    </string-array>
+    <string-array name="dilation_array">
+        <item>0 cm</item>
+        <item>1–2 cm</item>
+        <item>3-4 cm</item>
+        <item>>5 cm </item>
+    </string-array>
+    <string-array name="fetal_array">
+        <item>-3</item>
+        <item>-2</item>
+        <item>-1, 0</item>
+        <item>+1, +2</item>
     </string-array>
 </resources>

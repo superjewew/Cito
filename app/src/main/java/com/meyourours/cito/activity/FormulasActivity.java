@@ -41,7 +41,7 @@ public class FormulasActivity extends ActionBarActivity implements AdapterView.O
         StickyListHeadersListView detailList = (StickyListHeadersListView) findViewById(R.id.list);
         if(category != -1) {
             formulaList = Formulas.FORMULA_LIST[category];
-            getSupportActionBar().setTitle(CategoryFragment.TITLES[category]);
+            getSupportActionBar().setTitle(Formulas.CATEGORY[category]);
             adapter = new FormulaDetailAdapter(this, formulaList, Formulas.FORMULA_DESC[category]);
         }
         detailList.setAdapter(adapter);
