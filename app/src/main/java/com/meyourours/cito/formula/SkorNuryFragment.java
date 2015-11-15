@@ -18,13 +18,13 @@ import com.rey.material.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SkorNuriFragment extends FormulaFragment {
+public class SkorNuryFragment extends FormulaFragment {
 
     TextView textResult;
     EditText editDistance, editAge, editHeight, editWeight;
     Spinner spinnerSex;
 
-    public SkorNuriFragment() {
+    public SkorNuryFragment() {
         setmId(700);
         // Required empty public constructor
     }
