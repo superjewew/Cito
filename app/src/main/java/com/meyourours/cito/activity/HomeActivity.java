@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import com.meyourours.cito.EBMFragment;
 import com.meyourours.cito.R;
 import com.meyourours.cito.fragment.DosageFragment;
+import com.meyourours.cito.fragment.FeedbackFragment;
 import com.meyourours.cito.fragment.FormulaMainFragment;
 
 public class HomeActivity extends AppCompatActivity
@@ -97,13 +98,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_about) {
 
         } else if (id == R.id.nav_feedback) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Cito Feedback");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"aldoferly@citoapps.com"});
-            intent.setType("message/rfc822");
-            Intent mailer = Intent.createChooser(intent, null);
-            startActivity(mailer);
+            switchFragment(new FeedbackFragment());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
