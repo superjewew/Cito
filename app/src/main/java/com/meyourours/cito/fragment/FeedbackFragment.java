@@ -1,12 +1,19 @@
 package com.meyourours.cito.fragment;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
+
+import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.meyourours.cito.GMailSender;
 import com.meyourours.cito.R;
 
 /**
@@ -54,6 +61,7 @@ public class FeedbackFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -65,5 +73,42 @@ public class FeedbackFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        getActivity().getMenuInflater().inflate(R.menu.menu_feedback, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_send:
+                SendEmail sendEmail = new SendEmail();
+                sendEmail.execute("Test Content");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private class SendEmail extends AsyncTask<String, Void, Void> {
+
+        @Override
+        protected Void doInBackground(String... params) {
+            for(String body : params) {
+                try {
+                    GMailSender sender = new GMailSender("feedback.cito@gmail.com", "superqwater21");
+                    sender.sendMail("Feedback for Cito",
+                            body,
+                            "feedback.cito@gmail.com",
+                            "aldoferly@citoapps.com");
+                } catch (Exception e) {
+                    Log.e("SendMail", e.getMessage(), e);
+                }
+            }
+
+            return null;
+        }
+    }
 }
