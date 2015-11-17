@@ -12,9 +12,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.meyourours.cito.GMailSender;
 import com.meyourours.cito.R;
+import com.rey.material.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +33,8 @@ public class FeedbackFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private EditText nameEditText;
+    private String name;
 
     /**
      * Use this factory method to create a new instance of
@@ -70,6 +74,8 @@ public class FeedbackFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_feedback, container, false);
 
+        nameEditText = (EditText) rootView.findViewById(R.id.edit_name);
+
         return rootView;
     }
 
@@ -83,6 +89,7 @@ public class FeedbackFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.action_send:
+                name = nameEditText.getText().toString();
                 SendEmail sendEmail = new SendEmail();
                 sendEmail.execute("Test Content");
                 return true;
@@ -98,17 +105,24 @@ public class FeedbackFragment extends Fragment {
         protected Void doInBackground(String... params) {
             for(String body : params) {
                 try {
+                    Log.d("FEEDBACK", "Sending email");
                     GMailSender sender = new GMailSender("feedback.cito@gmail.com", "superqwater21");
-                    sender.sendMail("Feedback for Cito",
+                    sender.sendMail("Feedback for Cito, (" + name + ")",
                             body,
                             "feedback.cito@gmail.com",
-                            "aldoferly@citoapps.com");
+                            "norman.lie91@gmail.com");
                 } catch (Exception e) {
                     Log.e("SendMail", e.getMessage(), e);
                 }
             }
 
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            Toast.makeText(getActivity(), "Email Terkirim", Toast.LENGTH_SHORT).show();
+            Log.d("FEEDBACK", "Email sent");
         }
     }
 }
