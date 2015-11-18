@@ -3,10 +3,10 @@ package com.meyourours.cito.fragment;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -82,32 +82,54 @@ public class FeedbackFragment extends Fragment {
         nameEditText.setError("Harus diisi");
         feedbackEditText.setError("Harus diisi");
 
-        nameEditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (nameEditText.getText().toString().equals("")) {
-                    nameEditText.setError("Harus diisi");
-                } else {
-                    nameEditText.setError(null);
-                }
-                return false;
-            }
-        });
+        nameEditText.addTextChangedListener(errorNameWatcher);
 
-        feedbackEditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if(feedbackEditText.getText().toString().equals("")) {
-                    feedbackEditText.setError("Harus diisi");
-                } else {
-                    feedbackEditText.setError(null);
-                }
-                return false;
-            }
-        });
+        feedbackEditText.addTextChangedListener(errorFeedbackWatcher);
 
         return rootView;
     }
+
+    TextWatcher errorNameWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if(s.toString().equals("")) {
+                nameEditText.setError("Harus diisi");
+            } else {
+                nameEditText.setError(null);
+            }
+        }
+    };
+
+    TextWatcher errorFeedbackWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            if(s.toString().equals("")) {
+                feedbackEditText.setError("Harus diisi");
+            } else {
+                feedbackEditText.setError(null);
+            }
+        }
+    };
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

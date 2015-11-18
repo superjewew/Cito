@@ -46,7 +46,7 @@
         <item>Skor Nury</item>
     </string-array>
     <string-array name="rehabilitasi_desc">
-        <item>Menghitung maksimum intake oksigen setelah berlari selama 6 menit</item>
+        <item>Menghitung maksimum intake oksigen setelah berjalan cepat selama 6 menit</item>
     </string-array>
     <string-array name="dosage_medicine_name">
         <item name="aminofilin">"Aminofilin 200 mg</item>
