@@ -6,15 +6,18 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.meyourours.cito.GMailSender;
 import com.meyourours.cito.R;
+import com.rey.material.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,6 +34,9 @@ public class FeedbackFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private EditText nameEditText;
+    private EditText feedbackEditText;
+    private String name;
 
     /**
      * Use this factory method to create a new instance of
@@ -70,6 +76,36 @@ public class FeedbackFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_feedback, container, false);
 
+        nameEditText = (EditText) rootView.findViewById(R.id.edit_name);
+        feedbackEditText = (EditText) rootView.findViewById(R.id.edit_feedback);
+
+        nameEditText.setError("Harus diisi");
+        feedbackEditText.setError("Harus diisi");
+
+        nameEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (nameEditText.getText().toString().equals("")) {
+                    nameEditText.setError("Harus diisi");
+                } else {
+                    nameEditText.setError(null);
+                }
+                return false;
+            }
+        });
+
+        feedbackEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(feedbackEditText.getText().toString().equals("")) {
+                    feedbackEditText.setError("Harus diisi");
+                } else {
+                    feedbackEditText.setError(null);
+                }
+                return false;
+            }
+        });
+
         return rootView;
     }
 
@@ -83,8 +119,13 @@ public class FeedbackFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.action_send:
-                SendEmail sendEmail = new SendEmail();
-                sendEmail.execute("Test Content");
+                name = nameEditText.getText().toString();
+                String feedback = feedbackEditText.getText().toString();
+                if(!name.equals("") && !feedback.equals("")) {
+                    SendEmail sendEmail = new SendEmail();
+                    sendEmail.execute(feedback);
+                }
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -98,17 +139,24 @@ public class FeedbackFragment extends Fragment {
         protected Void doInBackground(String... params) {
             for(String body : params) {
                 try {
+                    Log.d("FEEDBACK", "Sending email");
                     GMailSender sender = new GMailSender("feedback.cito@gmail.com", "superqwater21");
-                    sender.sendMail("Feedback for Cito",
+                    sender.sendMail("Feedback for Cito, (" + name + ")",
                             body,
                             "feedback.cito@gmail.com",
-                            "aldoferly@citoapps.com");
+                            "norman.lie91@gmail.com");
                 } catch (Exception e) {
                     Log.e("SendMail", e.getMessage(), e);
                 }
             }
 
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            Toast.makeText(getActivity(), "Email Terkirim", Toast.LENGTH_SHORT).show();
+            Log.d("FEEDBACK", "Email sent");
         }
     }
 }

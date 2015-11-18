@@ -2,29 +2,19 @@ package com.meyourours.cito;
 
 
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.security.Security;
-import java.util.Date;
 import java.util.Properties;
+
 
 import javax.activation.DataHandler;
 import javax.mail.Message;
-import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.util.ByteArrayDataSource;
-import javax.sql.DataSource;
 
-/**
- * Created by SRIN on 11/16/2015.
- */
 public class GMailSender extends javax.mail.Authenticator {
 
     private String mailhost = "smtp.gmail.com";
@@ -32,35 +22,44 @@ public class GMailSender extends javax.mail.Authenticator {
     private String password;
     private Session session;
 
-    static {
-        Security.addProvider(new JSSEProvider());
-    }
+//    static {
+//        Security.addProvider(new JSSEProvider());
+//    }
 
     public GMailSender(String user, String password) {
         this.user = user;
         this.password = password;
 
         Properties props = new Properties();
-        props.setProperty("mail.transport.protocol", "smtp");
-        props.setProperty("mail.host", mailhost);
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class",
-                "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.socketFactory.fallback", "false");
-        props.setProperty("mail.smtp.quitwait", "false");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+//        props.setProperty("mail.transport.protocol", "smtp");
+//        props.setProperty("mail.smtp.host", mailhost);
+//        props.put("mail.smtp.auth", "true");
+//        props.put("mail.smtp.port", "465");
+//        props.put("mail.smtp.socketFactory.port", "465");
+//        props.put("mail.smtp.socketFactory.class",
+//                "javax.net.ssl.SSLSocketFactory");
+//        props.put("mail.smtp.socketFactory.fallback", "false");
+//        props.setProperty("mail.smtp.quitwait", "false");
 
         session = Session.getDefaultInstance(props, this);
+    }
+
+    protected PasswordAuthentication getPasswordAuthentication() {
+        return new PasswordAuthentication(user, password);
     }
 
     public synchronized void sendMail(String subject, String body, String sender, String recipients) throws Exception {
         try{
             MimeMessage message = new MimeMessage(session);
-            DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));
-            message.setSender(new InternetAddress(sender));
+//            DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));
+            message.setFrom(new InternetAddress(sender));
             message.setSubject(subject);
-            message.setDataHandler(handler);
+//            message.setDataHandler(handler);
+            message.setContent(body, "text/html");
             if (recipients.indexOf(',') > 0)
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
             else

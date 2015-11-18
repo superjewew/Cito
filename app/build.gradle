@@ -19,19 +19,20 @@ android {
     }
 
     packagingOptions {
-        exclude 'META-INF/LICENSE.txt'
+        pickFirst 'META-INF/LICENSE.txt'
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.1'
     testCompile 'junit:junit:4.12'
     compile 'com.github.rey5137:material:1.1.1'
     compile 'se.emilsjolander:stickylistheaders:2.7.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:design:22.2.1'
-    compile 'javax.mail:mail:1.4.7'
+    compile 'com.sun.mail:android-mail:1.5.5-SNAPSHOT'
+    compile 'com.sun.mail:android-activation:1.5.5-SNAPSHOT'
     androidTestCompile 'junit:junit:4.12'
 }
 

@@ -88,5 +88,7 @@
     <style name="EditTextCito" parent="Material.Widget.EditText.Light">
         <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
         <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
     </style>
 </resources>
