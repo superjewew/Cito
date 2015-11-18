@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.meyourours.cito.GMailSender;
 import com.meyourours.cito.R;
 import com.rey.material.widget.EditText;
@@ -37,6 +38,7 @@ public class FeedbackFragment extends Fragment {
     private EditText nameEditText;
     private EditText feedbackEditText;
     private String name;
+    private MaterialDialog dialog;
 
     /**
      * Use this factory method to create a new instance of
@@ -85,6 +87,12 @@ public class FeedbackFragment extends Fragment {
         nameEditText.addTextChangedListener(errorNameWatcher);
 
         feedbackEditText.addTextChangedListener(errorFeedbackWatcher);
+
+        dialog = new MaterialDialog.Builder(getActivity())
+                .title("Mengirim Tanggapan")
+                .content("Mohon tunggu sebentar")
+                .progress(true, 0)
+                .build();
 
         return rootView;
     }
@@ -144,6 +152,7 @@ public class FeedbackFragment extends Fragment {
                 name = nameEditText.getText().toString();
                 String feedback = feedbackEditText.getText().toString();
                 if(!name.equals("") && !feedback.equals("")) {
+                    dialog.show();
                     SendEmail sendEmail = new SendEmail();
                     sendEmail.execute(feedback);
                 }
@@ -163,8 +172,8 @@ public class FeedbackFragment extends Fragment {
                 try {
                     Log.d("FEEDBACK", "Sending email");
                     GMailSender sender = new GMailSender("feedback.cito@gmail.com", "superqwater21");
-                    sender.sendMail("Feedback for Cito, (" + name + ")",
-                            body,
+                    sender.sendMail("Feedback for Cito",
+                            name + " said,\n" + body,
                             "feedback.cito@gmail.com",
                             "norman.lie91@gmail.com");
                 } catch (Exception e) {
@@ -177,6 +186,7 @@ public class FeedbackFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+            dialog.dismiss();
             Toast.makeText(getActivity(), "Email Terkirim", Toast.LENGTH_SHORT).show();
             Log.d("FEEDBACK", "Email sent");
         }

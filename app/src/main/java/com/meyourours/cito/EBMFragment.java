@@ -16,6 +16,7 @@ import com.meyourours.cito.formula.Formulas;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 import com.rey.material.widget.Switch;
+import com.rey.material.widget.TextView;
 
 
 /**
@@ -30,6 +31,7 @@ public class EBMFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private EditText editSensitivity, editSpecivicity, editPretest;
+    private TextView ebmText;
     private Switch testResult;
 
     // TODO: Rename and change types of parameters
@@ -82,6 +84,7 @@ public class EBMFragment extends Fragment {
         editSpecivicity = (EditText) rootView.findViewById(R.id.edit_specitivity);
         editPretest = (EditText) rootView.findViewById(R.id.edit_pretest);
         testResult = (Switch) rootView.findViewById(R.id.switches_test_result);
+        ebmText = (TextView) rootView.findViewById(R.id.text_ebm);
 
         editSensitivity.setEnabled(true);
         editSpecivicity.setEnabled(true);
@@ -163,7 +166,7 @@ public class EBMFragment extends Fragment {
             float sensitivity = Float.parseFloat(editSensitivity.getText().toString()) / 100.00f;
             float specivicity = Float.parseFloat(editSpecivicity.getText().toString()) / 100.00f;
             float result = Formulas.getPostTestProb(pretest, sensitivity, specivicity, testResult.isChecked());
-            Toast.makeText(getActivity(), "Result is: " + result * 100.00f + "%", Toast.LENGTH_SHORT).show();
+            ebmText.setText(result * 100.00f + "%");
         } else {
             Toast.makeText(getActivity(), "Harap masukan pre test, sensitivas dan spesivisitas", Toast.LENGTH_SHORT).show();
         }
