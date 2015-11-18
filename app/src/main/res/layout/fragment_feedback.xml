@@ -21,8 +21,7 @@
         android:layout_below="@id/header"
         android:layout_marginTop="8dp"
         android:hint="Nama"
-        app:et_supportMode="none"
-        app:et_error="Tidak bisa kosong"
+        app:et_supportMode="helper"
         app:et_labelEnable="true"/>
 
     <com.rey.material.widget.EditText
@@ -31,9 +30,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_name"
-        android:layout_marginTop="8dp"
         android:inputType="textEmailAddress"
         android:hint="Email (Opsional)"
+        app:et_supportMode="helper"
         app:et_labelEnable="true"/>
 
     <com.rey.material.widget.EditText
@@ -42,10 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_email"
-        android:layout_marginTop="8dp"
         android:enabled="true"
         android:hint="Tanggapan"
-        app:et_supportMode="helperWithError"
+        app:et_supportMode="helper"
         app:et_helper=""
         app:et_labelEnable="true"/>
 

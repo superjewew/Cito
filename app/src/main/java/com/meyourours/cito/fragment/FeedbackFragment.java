@@ -79,6 +79,33 @@ public class FeedbackFragment extends Fragment {
         nameEditText = (EditText) rootView.findViewById(R.id.edit_name);
         feedbackEditText = (EditText) rootView.findViewById(R.id.edit_feedback);
 
+        nameEditText.setError("Harus diisi");
+        feedbackEditText.setError("Harus diisi");
+
+        nameEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (nameEditText.getText().toString().equals("")) {
+                    nameEditText.setError("Harus diisi");
+                } else {
+                    nameEditText.setError(null);
+                }
+                return false;
+            }
+        });
+
+        feedbackEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if(feedbackEditText.getText().toString().equals("")) {
+                    feedbackEditText.setError("Harus diisi");
+                } else {
+                    feedbackEditText.setError(null);
+                }
+                return false;
+            }
+        });
+
         return rootView;
     }
 
@@ -94,18 +121,9 @@ public class FeedbackFragment extends Fragment {
             case R.id.action_send:
                 name = nameEditText.getText().toString();
                 String feedback = feedbackEditText.getText().toString();
-                if(name.equals("")) {
-                    if(feedback.equals("")) {
-                        nameEditText.setError("Harus diisi");
-                        feedbackEditText.setError("Harus diisi");
-                    } else {
-                        nameEditText.setError("Harus diisi");
-                    }
-                } else if(feedback.equals("")) {
-                    feedbackEditText.setError("Harus diisi");
-                } else {
+                if(!name.equals("") && !feedback.equals("")) {
                     SendEmail sendEmail = new SendEmail();
-                    sendEmail.execute("Test Content");
+                    sendEmail.execute(feedback);
                 }
 
                 return true;
