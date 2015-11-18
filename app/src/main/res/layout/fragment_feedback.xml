@@ -4,14 +4,24 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.meyourours.cito.fragment.FeedbackFragment">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:text="@string/feedback_intro"/>
 
     <com.rey.material.widget.EditText
         style="@style/EditTextCito"
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/header"
         android:layout_marginTop="8dp"
         android:hint="Nama"
+        app:et_supportMode="none"
         app:et_error="Tidak bisa kosong"
         app:et_labelEnable="true"/>
 
@@ -34,8 +44,9 @@
         android:layout_below="@id/edit_email"
         android:layout_marginTop="8dp"
         android:enabled="true"
-        android:hint="Feedback"
-        app:et_error="Tidak bisa kosong"
+        android:hint="Tanggapan"
+        app:et_supportMode="helperWithError"
+        app:et_helper=""
         app:et_labelEnable="true"/>
 
 </RelativeLayout>

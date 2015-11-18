@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,6 +35,7 @@ public class FeedbackFragment extends Fragment {
     private String mParam2;
 
     private EditText nameEditText;
+    private EditText feedbackEditText;
     private String name;
 
     /**
@@ -75,6 +77,7 @@ public class FeedbackFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_feedback, container, false);
 
         nameEditText = (EditText) rootView.findViewById(R.id.edit_name);
+        feedbackEditText = (EditText) rootView.findViewById(R.id.edit_feedback);
 
         return rootView;
     }
@@ -90,8 +93,21 @@ public class FeedbackFragment extends Fragment {
         switch(item.getItemId()) {
             case R.id.action_send:
                 name = nameEditText.getText().toString();
-                SendEmail sendEmail = new SendEmail();
-                sendEmail.execute("Test Content");
+                String feedback = feedbackEditText.getText().toString();
+                if(name.equals("")) {
+                    if(feedback.equals("")) {
+                        nameEditText.setError("Harus diisi");
+                        feedbackEditText.setError("Harus diisi");
+                    } else {
+                        nameEditText.setError("Harus diisi");
+                    }
+                } else if(feedback.equals("")) {
+                    feedbackEditText.setError("Harus diisi");
+                } else {
+                    SendEmail sendEmail = new SendEmail();
+                    sendEmail.execute("Test Content");
+                }
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
