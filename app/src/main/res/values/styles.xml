@@ -61,8 +61,8 @@
     <style name="LightSpinner.Formula">
         <item name="android:padding">8dp</item>
         <item name="android:minWidth">128dp</item>
-        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
-        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginLeft">@dimen/spinner_margin</item>
+        <item name="android:layout_marginRight">@dimen/spinner_margin</item>
     </style>
 
     <style name="LightSpinnerNoArrow" parent="LightSpinner">
