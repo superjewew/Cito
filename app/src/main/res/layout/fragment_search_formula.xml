@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.meyourours.cito.fragment.SearchFormulaFragment">
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Cari"
+        app:et_labelEnable="true"/>
+
+    <ListView
+        android:id="@+id/list_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/edit_search"
+        android:layout_marginTop="8dp"/>
+
+</RelativeLayout>
