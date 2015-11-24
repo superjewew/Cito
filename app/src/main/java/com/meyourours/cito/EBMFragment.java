@@ -18,6 +18,8 @@ import com.rey.material.widget.Spinner;
 import com.rey.material.widget.Switch;
 import com.rey.material.widget.TextView;
 
+import java.text.DecimalFormat;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -166,7 +168,8 @@ public class EBMFragment extends Fragment {
             float sensitivity = Float.parseFloat(editSensitivity.getText().toString()) / 100.00f;
             float specivicity = Float.parseFloat(editSpecivicity.getText().toString()) / 100.00f;
             float result = Formulas.getPostTestProb(pretest, sensitivity, specivicity, testResult.isChecked());
-            ebmText.setText(result * 100.00f + "%");
+            DecimalFormat df = new DecimalFormat("#.###");
+            ebmText.setText(df.format(result * 100.00f) + "%");
         } else {
             Toast.makeText(getActivity(), "Harap masukan pre test, sensitivas dan spesivisitas", Toast.LENGTH_SHORT).show();
         }
