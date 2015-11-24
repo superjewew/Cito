@@ -175,7 +175,7 @@ public class FeedbackFragment extends Fragment {
                     sender.sendMail("Feedback for Cito",
                             name + " said,\n" + body,
                             "feedback.cito@gmail.com",
-                            "norman.lie91@gmail.com");
+                            "meyourours@gmail.com");
                 } catch (Exception e) {
                     Log.e("SendMail", e.getMessage(), e);
                 }
