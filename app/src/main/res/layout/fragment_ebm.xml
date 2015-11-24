@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
@@ -14,39 +14,45 @@
         <!--android:divider="@null"-->
         <!--android:dividerHeight="0dp"/>-->
 
-    <include
-        android:id="@+id/header"
-        layout="@layout/layout_list_ebm_header"/>
-    <include layout="@layout/layout_list_ebm_item"
-        android:id="@+id/test"
-        android:layout_below="@+id/header"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
-    <com.rey.material.widget.TextView
-        android:id="@+id/label_ebm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="8dp"
-        android:layout_below="@+id/test"
-        android:text="Kemungkinan"
-        android:textSize="32sp"
-        android:textColor="@color/colorPrimaryDark"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <include
+            android:id="@+id/header"
+            layout="@layout/layout_list_ebm_header"/>
+        <include layout="@layout/layout_list_ebm_item"
+            android:id="@+id/test"
+            android:layout_below="@+id/header"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <com.rey.material.widget.TextView
+            android:id="@+id/label_ebm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/test"
+            android:text="Kemungkinan"
+            android:textSize="32sp"
+            android:textColor="@color/colorPrimaryDark"/>
 
-    <com.rey.material.widget.TextView
-        android:id="@+id/text_ebm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:padding="8dp"
-        android:layout_below="@+id/test"
-        android:layout_toRightOf="@+id/label_ebm"
-        android:text="0%"
-        android:textSize="24sp"
-        android:textColor="@color/colorTextWhite"
-        android:background="@color/colorPrimaryDark"/>
+        <com.rey.material.widget.TextView
+            android:id="@+id/text_ebm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:padding="8dp"
+            android:layout_below="@+id/test"
+            android:layout_toRightOf="@+id/label_ebm"
+            android:text="0%"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextWhite"
+            android:background="@color/colorPrimaryDark"/>
+    </RelativeLayout>
 
-</RelativeLayout>
+
+
+</ScrollView>
