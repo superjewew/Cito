@@ -79,10 +79,7 @@ public class SearchFormulaFragment extends Fragment {
                 String[] listview_array = getActivity().getResources().getStringArray(resId);
                 for (String listview_item : listview_array) {
                     if (textlength <= listview_item.length()) {
-                        if (searchEdit.getText().toString().equalsIgnoreCase(
-                                (String)
-                                        listview_item.subSequence(0,
-                                                textlength))) {
+                        if (listview_item.toLowerCase().contains(searchEdit.getText().toString().toLowerCase())) {
                             resultArray.add(listview_item);
                         }
                     }
