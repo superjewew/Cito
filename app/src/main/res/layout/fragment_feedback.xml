@@ -9,13 +9,9 @@
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:textSize="18sp"
         android:text="Terima kasih telah mengunduh aplikasi Cito!"
-        android:textColor="@color/colorPrimaryDark"
-        fontPath="AbadiCondensed.ttf"/>
+        fontPath="AbadiCondensed.ttf"
+        style="@style/HeaderText" />
 
     <TextView
         android:id="@+id/intro"
@@ -26,19 +22,16 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="8dp"
         android:text="@string/feedback_intro"
+        android:textSize="18sp"
         fontPath="AbadiCondensed.ttf"/>
 
     <TextView
+        style="@style/HeaderText"
         android:id="@+id/feedback_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/intro"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:textSize="18sp"
         android:text="Form Feedback"
-        android:textColor="@color/colorPrimaryDark"
         fontPath="AbadiCondensed.ttf"/>
 
     <com.rey.material.widget.EditText

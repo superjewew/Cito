@@ -91,4 +91,13 @@
         <item name="et_supportTextErrorColor">#FFFF0000</item>
         <item name="et_dividerErrorColor">#FFFF0000</item>
     </style>
+
+    <style name="HeaderText">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>
