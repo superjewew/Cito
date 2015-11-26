@@ -1,6 +1,7 @@
 package com.meyourours.cito.activity;
 
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -20,6 +21,8 @@ import com.meyourours.cito.R;
 import com.meyourours.cito.fragment.DosageFragment;
 import com.meyourours.cito.fragment.FeedbackFragment;
 import com.meyourours.cito.fragment.FormulaMainFragment;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -71,6 +74,11 @@ public class HomeActivity extends AppCompatActivity
             editor.putBoolean(FIRST_LAUNCH, false);
             editor.commit();
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

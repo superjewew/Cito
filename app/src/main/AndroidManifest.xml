@@ -3,6 +3,7 @@
     package="com.meyourours.cito" >
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:name=".CitoApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
