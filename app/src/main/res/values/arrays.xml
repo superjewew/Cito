@@ -32,11 +32,11 @@
     <string-array name="umum_desc"/>
     <string-array name="kebidanan">
         <item name="bishop">Skor Bishop</item>
-        <item name="hpht">HPHT</item>
+        <item name="hpht">Hpht</item>
     </string-array>
     <string-array name="kebidanan_desc">
         <item>Memprediksi apakah kelahiran spontan dapat dilakukan atau tidak</item>
-        <item>Memprediksi tanggal kelahiran</item>
+        <item>Memprediksi tanggal kelahiran berdasarkan hari pertama haid terakhir</item>
     </string-array>
     <string-array name="internal_medicine">
         <item>Daldiyono</item>
