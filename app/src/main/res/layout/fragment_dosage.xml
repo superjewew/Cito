@@ -41,11 +41,11 @@
         android:hint="Berat (kg)"
         app:et_labelEnable="true"/>
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
         android:id="@+id/label_dosage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="12dp"
         android:layout_below="@+id/edit_weight"
         android:text="Dosis"
@@ -53,6 +53,7 @@
         android:textColor="@color/colorPrimaryDark"/>
 
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
         android:id="@+id/text_dosage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

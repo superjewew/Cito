@@ -9,7 +9,8 @@
         android:id="@+id/header_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HPHT"/>
+        android:text="HPHT"
+        fontPath="AbadiCondensed.ttf"/>
     <com.rey.material.widget.TextView
         style="@style/TextBody"
         android:id="@+id/date_picker"
@@ -17,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/header_time"
         android:text="31 Januari 2015"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        fontPath="AbadiCondensed.ttf"/>
     <com.rey.material.widget.TextView
         android:id="@+id/label_hpht"
         android:layout_width="wrap_content"
@@ -28,7 +30,8 @@
         android:layout_below="@+id/date_picker"
         android:text="Perkiraan"
         android:textSize="32sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textColor="@color/colorPrimaryDark"
+        fontPath="AbadiCondensed.ttf"/>
 
     <com.rey.material.widget.TextView
         android:id="@+id/text_hpht"
@@ -40,10 +43,11 @@
         android:padding="8dp"
         android:layout_below="@+id/date_picker"
         android:layout_toRightOf="@+id/label_hpht"
-        android:text="31 September 2015"
+        android:text=""
         android:textSize="24sp"
         android:textColor="@color/colorTextWhite"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/colorPrimaryDark"
+        fontPath="AbadiCondensed.ttf"/>
 
     <com.rey.material.widget.TextView
         style="@style/TextBody"
@@ -51,9 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_hpht"
-        android:text=""
+        android:text="Usia janin: 0 hari"
         android:textSize="24sp"
-        android:textColor="@color/colorPrimaryDark"/>
+        android:textColor="@color/colorPrimaryDark"
+        fontPath="AbadiCondensed.ttf"/>
 
     <View
         android:layout_width="match_parent"

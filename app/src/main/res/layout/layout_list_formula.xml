@@ -8,19 +8,21 @@
         android:id="@+id/textview_formula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textColor="#DD000000"
         android:padding="8dp"
         android:layout_centerVertical="true"
-        android:text="Anestesi"/>
+        android:text="Anestesi"
+        fontPath="AbadiCondensed.ttf"/>
     <com.rey.material.widget.TextView
         android:id="@+id/textview_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:textColor="#84000000"
         android:text=""
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="32dp"/>
+        android:layout_marginRight="32dp"
+        fontPath="AbadiCondensed.ttf"/>
 </RelativeLayout>
