@@ -1,5 +1,6 @@
 package com.meyourours.cito.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -15,6 +16,7 @@ import com.meyourours.cito.adapter.FormulaDetailAdapter;
 import com.meyourours.cito.formula.Formulas;
 
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 public class FormulasActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -47,6 +49,11 @@ public class FormulasActivity extends ActionBarActivity implements AdapterView.O
         detailList.setAdapter(adapter);
         detailList.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

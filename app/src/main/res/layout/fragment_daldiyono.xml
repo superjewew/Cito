@@ -20,7 +20,8 @@
                 android:layout_marginTop="8dp"
                 android:inputType="number"
                 android:hint="Berat (kg)"
-                app:et_labelEnable="true"/>
+                app:et_labelEnable="true"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -29,7 +30,10 @@
                 android:id="@+id/checkBoxHaus"
                 android:text="Muntah/Haus"
                 android:layout_below="@+id/edit_weight"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -38,7 +42,10 @@
                 android:text="TD Sistolik 60-90 mmHg"
                 android:id="@+id/checkBoxSistolik6090"
                 android:layout_below="@+id/checkBoxHaus"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -47,7 +54,10 @@
                 android:text="TD Sistolik &lt;60"
                 android:id="@+id/checkBoxSistolik60"
                 android:layout_below="@+id/checkBoxSistolik6090"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -56,7 +66,10 @@
                 android:text="Frekuensi Nadi >120x"
                 android:id="@+id/checkBoxNadi"
                 android:layout_below="@+id/checkBoxSistolik60"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -65,7 +78,10 @@
                 android:text="Kesadaran Apatis"
                 android:id="@+id/checkBoxApatis"
                 android:layout_below="@+id/checkBoxNadi"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -74,7 +90,10 @@
                 android:text="Somnolen/sopor/koma"
                 android:id="@+id/checkBoxSomnolen"
                 android:layout_below="@+id/checkBoxApatis"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -83,7 +102,10 @@
                 android:text="Frekuensi nafas >30x/menit"
                 android:id="@+id/checkBoxNafas"
                 android:layout_below="@+id/checkBoxSomnolen"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -92,7 +114,10 @@
                 android:text="Facies Cholerica"
                 android:id="@+id/checkBoxFacies"
                 android:layout_below="@+id/checkBoxNafas"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -101,7 +126,10 @@
                 android:text="Vox Cholerica"
                 android:id="@+id/checkBoxVox"
                 android:layout_below="@+id/checkBoxFacies"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -110,7 +138,10 @@
                 android:text="Turgor kulit menurun"
                 android:id="@+id/checkBoxTurgor"
                 android:layout_below="@+id/checkBoxVox"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -119,7 +150,10 @@
                 android:text="&quot;Washer Woman Hand&quot;"
                 android:id="@+id/checkBoxWasher"
                 android:layout_below="@+id/checkBoxTurgor"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -128,7 +162,10 @@
                 android:text="Ekstermitas dingin"
                 android:id="@+id/checkBoxCold"
                 android:layout_below="@+id/checkBoxWasher"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -137,7 +174,10 @@
                 android:text="Sianosis"
                 android:id="@+id/checkBoxSianosis"
                 android:layout_below="@+id/checkBoxCold"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -146,7 +186,10 @@
                 android:text="Umur 50-60 Tahun"
                 android:id="@+id/checkBoxAge1"
                 android:layout_below="@+id/checkBoxSianosis"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.CheckBox
                 style="@style/CheckBoxDrawable.Formula"
@@ -155,9 +198,13 @@
                 android:text="Umur >60 tahun"
                 android:id="@+id/checkBoxAge2"
                 android:layout_below="@+id/checkBoxAge1"
-                android:checked="false" />
+                android:checked="false"
+                android:gravity="center"
+                android:textSize="18sp"
+                fontPath="AbadiCondensed.ttf"/>
 
             <com.rey.material.widget.TextView
+                style="@style/TextBody"
                 android:id="@+id/label_daldiyono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,6 +217,7 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <com.rey.material.widget.TextView
+                style="@style/TextBody"
                 android:id="@+id/text_daldiyono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -185,6 +233,7 @@
                 android:background="@color/colorPrimaryDark"/>
 
             <com.rey.material.widget.TextView
+                style="@style/TextBody"
                 android:id="@+id/text_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

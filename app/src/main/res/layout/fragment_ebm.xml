@@ -26,11 +26,11 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
         <com.rey.material.widget.TextView
+            style="@style/TextBody"
             android:id="@+id/label_ebm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="8dp"
             android:layout_below="@+id/test"
             android:text="Kemungkinan"
@@ -38,6 +38,7 @@
             android:textColor="@color/colorPrimaryDark"/>
 
         <com.rey.material.widget.TextView
+            style="@style/TextBody"
             android:id="@+id/text_ebm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

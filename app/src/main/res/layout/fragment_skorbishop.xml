@@ -60,6 +60,7 @@
                 app:spn_label="Fetal Station"/>
 
             <com.rey.material.widget.TextView
+                style="@style/TextBody"
                 android:id="@+id/label_bmi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,6 +73,7 @@
                 android:textColor="@color/colorPrimaryDark"/>
 
             <com.rey.material.widget.TextView
+                style="@style/TextBody"
                 android:id="@+id/text_bishop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,6 +89,7 @@
                 android:background="@color/colorPrimaryDark"/>
 
             <com.rey.material.widget.TextView
+                style="@style/TextBody"
                 android:id="@+id/text_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

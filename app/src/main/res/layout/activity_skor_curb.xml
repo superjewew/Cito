@@ -70,11 +70,11 @@
         android:gravity="center_vertical"/>
 
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
         android:id="@+id/label_curb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginRight="12dp"
         android:layout_below="@+id/check_age"
         android:text="Skor CURB-65"
@@ -82,12 +82,11 @@
         android:textColor="@color/colorPrimaryDark"/>
 
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
         android:id="@+id/text_curb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:padding="8dp"
         android:layout_below="@+id/check_age"
         android:layout_toRightOf="@+id/label_curb"
@@ -97,12 +96,10 @@
         android:background="@color/colorPrimaryDark"/>
 
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
         android:id="@+id/text_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
         android:layout_below="@+id/label_curb"
         android:text="Morality Risk"
         android:textSize="24sp"
