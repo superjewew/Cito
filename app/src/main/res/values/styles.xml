@@ -6,6 +6,11 @@
     <!--</style>-->
 
     <style name="CheckBoxDrawable" parent="Material.Drawable.CheckBox"/>
+    <style name="CheckBoxDrawable.Formula">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+    </style>
     <style  name="TabPageIndicator"  parent="Material.Widget.TabPageIndicator.Light">
         <item name="tpi_tabPadding">12dp</item>
         <item name="tpi_tabRipple">@style/TabRippleStyle</item>
@@ -49,7 +54,15 @@
         <item name="spn_arrowAnimDuration">@android:integer/config_shortAnimTime</item>
         <item name="spn_arrowInterpolator">@android:anim/decelerate_interpolator</item>
         <item name="spn_arrowColor">@color/colorControlNormal</item>
+        <item name="spn_popupItemAnimation">@null</item>
         <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
+    </style>
+
+    <style name="LightSpinner.Formula">
+        <item name="android:padding">8dp</item>
+        <item name="android:minWidth">128dp</item>
+        <item name="android:layout_marginLeft">@dimen/spinner_margin</item>
+        <item name="android:layout_marginRight">@dimen/spinner_margin</item>
     </style>
 
     <style name="LightSpinnerNoArrow" parent="LightSpinner">
@@ -71,4 +84,26 @@
         <item name="sw_trackColor">@drawable/color_track_light</item>
         <item name="sw_thumbColor">@drawable/color_thumb_light</item>
     </style>
+
+    <style name="EditTextCito" parent="Material.Widget.EditText.Light">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:textColor">@color/colorTextBlack</item>
+        <item name="fontPath">AbadiCondensed.ttf"</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="HeaderText" parent="TextBody">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>

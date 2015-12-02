@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.meyourours.cito.fragment.FeedbackFragment"
+                tools:ignore="MissingPrefix">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Terima kasih telah mengunduh aplikasi Cito!"
+        fontPath="AbadiCondensed.ttf"
+        style="@style/HeaderText" />
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="8dp"
+        android:text="@string/feedback_intro"
+        android:textSize="18sp"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <TextView
+        style="@style/HeaderText"
+        android:id="@+id/feedback_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intro"
+        android:text="Form Feedback"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feedback_header"
+        android:layout_marginTop="8dp"
+        android:hint="Nama"
+        app:et_supportMode="helper"
+        app:et_labelEnable="true"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_name"
+        android:inputType="textEmailAddress"
+        android:hint="Email (Opsional)"
+        app:et_supportMode="helper"
+        app:et_labelEnable="true"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <com.rey.material.widget.EditText
+        style="@style/EditTextCito"
+        android:id="@+id/edit_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_email"
+        android:enabled="true"
+        android:hint="Tanggapan"
+        app:et_supportMode="helper"
+        app:et_helper=""
+        app:et_labelEnable="true"
+        fontPath="AbadiCondensed.ttf"/>
+
+</RelativeLayout>

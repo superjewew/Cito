@@ -3,42 +3,42 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:paddingLeft="8dp"
-              android:paddingRight="8dp">
+              android:layout_height="match_parent">
 
     <com.rey.material.widget.Spinner
         android:id="@+id/spinner_test"
-        style="@style/LightSpinner"
+        style="@style/LightSpinner.Formula"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minWidth="128dp"
-        android:padding="8dp"
         app:spn_label="Jenis Tes"/>
     <com.rey.material.widget.EditText
-        style="@style/Material.Widget.EditText.Light"
+        style="@style/EditTextCito"
         android:id="@+id/edit_sensitivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:inputType="number"
         android:enabled="false"
-        android:hint="Sensitivitas"
+        android:hint="Sensitivitas (%)"
         app:et_labelEnable="true"/>
     <com.rey.material.widget.EditText
-        style="@style/Material.Widget.EditText.Light"
+        style="@style/EditTextCito"
         android:id="@+id/edit_specitivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:inputType="number"
-        android:hint="Spesifisitas"
+        android:hint="Spesifisitas (%)"
         app:et_labelEnable="true"
         android:enabled="false"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="Hasil tes :"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

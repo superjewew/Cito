@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.meyourours.cito.formula.HphtFragment">
+
+    <com.rey.material.widget.TextView
+        style="@style/TextBody"
+        android:id="@+id/header_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HPHT"
+        fontPath="AbadiCondensed.ttf"/>
+    <com.rey.material.widget.TextView
+        style="@style/TextBody"
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_time"
+        android:text="31 Januari 2015"
+        android:textSize="24sp"
+        fontPath="AbadiCondensed.ttf"/>
+    <com.rey.material.widget.TextView
+        android:id="@+id/label_hpht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/date_picker"
+        android:text="Perkiraan"
+        android:textSize="32sp"
+        android:textColor="@color/colorPrimaryDark"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <com.rey.material.widget.TextView
+        android:id="@+id/text_hpht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:layout_below="@+id/date_picker"
+        android:layout_toRightOf="@+id/label_hpht"
+        android:text=""
+        android:textSize="24sp"
+        android:textColor="@color/colorTextWhite"
+        android:background="@color/colorPrimaryDark"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <com.rey.material.widget.TextView
+        style="@style/TextBody"
+        android:id="@+id/text_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_hpht"
+        android:text="Usia janin: 0 hari"
+        android:textSize="24sp"
+        android:textColor="@color/colorPrimaryDark"
+        fontPath="AbadiCondensed.ttf"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/text_result"
+        android:background="@color/colorPrimary"/>
+
+</RelativeLayout>

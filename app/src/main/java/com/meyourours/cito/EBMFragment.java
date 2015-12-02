@@ -10,17 +10,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import com.meyourours.cito.adapter.EBMAdapter;
 import com.meyourours.cito.formula.Formulas;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 import com.rey.material.widget.Switch;
+import com.rey.material.widget.TextView;
 
-import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 
 /**
@@ -35,6 +33,7 @@ public class EBMFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     private EditText editSensitivity, editSpecivicity, editPretest;
+    private TextView ebmText;
     private Switch testResult;
 
     // TODO: Rename and change types of parameters
@@ -81,30 +80,49 @@ public class EBMFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_ebm, container, false);
 //        View listHeader = inflater.inflate(R.layout.layout_list_ebm_header, null);
 //        View listFooter = inflater.inflate(R.layout.layout_list_ebm_footer, null);
-//
-        Spinner spinnerDisease = (Spinner) rootView.findViewById(R.id.spinner_disease);
-        ArrayAdapter<String> adapterDisease = new ArrayAdapter<>(getActivity(), R.layout.row_spn, new String[]{"Test Disease"});
-        adapterDisease.setDropDownViewResource(R.layout.row_spn_dropdown);
-        spinnerDisease.setAdapter(adapterDisease);
 
-        Spinner spinnerTest = (Spinner) rootView.findViewById(R.id.spinner_test);
-        ArrayAdapter<String> adapterTest = new ArrayAdapter<>(getActivity(), R.layout.row_spn, new String[]{"Test Test"});
-        adapterTest.setDropDownViewResource(R.layout.row_spn_dropdown);
-        spinnerTest.setAdapter(adapterTest);
 
         editSensitivity = (EditText) rootView.findViewById(R.id.edit_sensitivity);
         editSpecivicity = (EditText) rootView.findViewById(R.id.edit_specitivity);
         editPretest = (EditText) rootView.findViewById(R.id.edit_pretest);
         testResult = (Switch) rootView.findViewById(R.id.switches_test_result);
+        ebmText = (TextView) rootView.findViewById(R.id.text_ebm);
 
+        editSensitivity.setEnabled(true);
+        editSpecivicity.setEnabled(true);
+        editSensitivity.setText("41");
+        editSpecivicity.setText("88");
+//
+        Spinner spinnerDisease = (Spinner) rootView.findViewById(R.id.spinner_disease);
+        ArrayAdapter<String> adapterDisease = new ArrayAdapter<>(getActivity(), R.layout.row_spn, new String[]{"Demam Berdarah Dengue"});
+        adapterDisease.setDropDownViewResource(R.layout.row_spn_dropdown);
+        spinnerDisease.setAdapter(adapterDisease);
+
+        Spinner spinnerTest = (Spinner) rootView.findViewById(R.id.spinner_test);
+        ArrayAdapter<String> adapterTest = new ArrayAdapter<>(getActivity(), R.layout.row_spn, new String[]{"Tourniquet Test", "NS-1 Antigen", "Dengue IgM"});
+        adapterTest.setDropDownViewResource(R.layout.row_spn_dropdown);
+        spinnerTest.setAdapter(adapterTest);
         spinnerTest.setOnItemClickListener(new Spinner.OnItemClickListener() {
             @Override
             public boolean onItemClick(Spinner parent, View view, int position, long id) {
-                editSensitivity.setEnabled(true);
-                editSpecivicity.setEnabled(true);
-                return false;
+                switch(position) {
+                    case 0:
+                        editSensitivity.setText("41");
+                        editSpecivicity.setText("88");
+                        break;
+                    case 1:
+                        editSensitivity.setText("97.4");
+                        editSpecivicity.setText("93.7");
+                        break;
+                    case 2:
+                        editSensitivity.setText("75");
+                        editSpecivicity.setText("81");
+                        break;
+                }
+                return true;
             }
         });
+
 //
 //        ListView ebmList = (ListView) rootView.findViewById(R.id.list_ebm);
 //        ebmList.addHeaderView(listHeader);
@@ -150,7 +168,8 @@ public class EBMFragment extends Fragment {
             float sensitivity = Float.parseFloat(editSensitivity.getText().toString()) / 100.00f;
             float specivicity = Float.parseFloat(editSpecivicity.getText().toString()) / 100.00f;
             float result = Formulas.getPostTestProb(pretest, sensitivity, specivicity, testResult.isChecked());
-            Toast.makeText(getActivity(), "Result is: " + result * 100.00f + "%", Toast.LENGTH_SHORT).show();
+            DecimalFormat df = new DecimalFormat("#.###");
+            ebmText.setText(df.format(result * 100.00f) + "%");
         } else {
             Toast.makeText(getActivity(), "Harap masukan pre test, sensitivas dan spesivisitas", Toast.LENGTH_SHORT).show();
         }

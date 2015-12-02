@@ -1,16 +1,16 @@
 package com.meyourours.cito.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.meyourours.cito.R;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends Activity {
 
     private static int SPLASH_TIMEOUT = 2000;
 

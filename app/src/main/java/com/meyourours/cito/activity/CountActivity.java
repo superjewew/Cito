@@ -1,6 +1,7 @@
 package com.meyourours.cito.activity;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
@@ -27,6 +28,7 @@ import java.util.Calendar;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class CountActivity extends ActionBarActivity {
 
@@ -88,7 +90,13 @@ public class CountActivity extends ActionBarActivity {
             Cursor cursor = getContentResolver().query(formulaUri, null, null, null, null);
             cursor.moveToFirst();
             useCount = cursor.getInt(cursor.getColumnIndex(FormulaTable.COLUMN_USE_COUNT));
+            cursor.close();
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override

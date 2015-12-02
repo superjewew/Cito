@@ -1,6 +1,8 @@
 package com.meyourours.cito.activity;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -13,13 +15,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.meyourours.cito.EBMFragment;
 import com.meyourours.cito.R;
 import com.meyourours.cito.fragment.DosageFragment;
+import com.meyourours.cito.fragment.FeedbackFragment;
 import com.meyourours.cito.fragment.FormulaMainFragment;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final String PREFS_DOMAIN = "com.myo.cito.prefs";
+    private static final String FIRST_LAUNCH = "first_launch";
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +37,7 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        prefs = getSharedPreferences(PREFS_DOMAIN, 0);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +58,27 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         switchFragment(new FormulaMainFragment());
+
+        boolean isFirstTime = prefs.getBoolean(FIRST_LAUNCH, true);
+        if(isFirstTime) {
+            new MaterialDialog.Builder(this)
+                    .title("Cito beta ver.")
+                    .content("Aplikasi ini masih dalam tahap pengembangan (beta) sehingga konten yang " +
+                            "terdapat di dalam masih sangat sedikit. Kami akan selalu menambahkan " +
+                            "rumus-rumus dan konten secara teratur setiap minggu-nya. Kami juga " +
+                            "mengharapkan tanggapan anda melalui email atau review di play store. " +
+                            "Terima kasih")
+                    .positiveText("Ok")
+                    .show();
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean(FIRST_LAUNCH, false);
+            editor.commit();
+        }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
     @Override
@@ -93,10 +125,10 @@ public class HomeActivity extends AppCompatActivity
             switchFragment(new DosageFragment());
         } else if (id == R.id.nav_ebm) {
             switchFragment(new EBMFragment());
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_feedback) {
+            switchFragment(new FeedbackFragment());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -11,9 +11,11 @@ import com.meyourours.cito.activity.CountActivity;
  */
 public class Formulas {
 
-    public static final String[] CATEGORY = {"Anak", "Geriatri", "Pulmonologi"};
-    public static final int[] FORMULA_LIST = {R.array.anak, R.array.geriatri, R.array.pulmonologi};
-    public static final int[] FORMULA_DESC = {R.array.anak_desc, R.array.geriatri_desc, R.array.pulmonologi_desc};
+    public static final String[] CATEGORY = {"Anak", "Fluid", "Geriatri", "Internal Medicine", "Kebidanan", "Pulmonologi", "Rehabilitasi"};
+    public static final int[] FORMULA_LIST = {R.array.anak, R.array.fluid, R.array.geriatri,
+                R.array.internal_medicine, R.array.kebidanan, R.array.pulmonologi, R.array.rehabilitasi};
+    public static final int[] FORMULA_DESC = {R.array.anak_desc, R.array.fluid_desc, R.array.geriatri_desc,
+            R.array.internal_medicine_desc, R.array.kebidanan_desc, R.array.pulmonologi_desc, R.array.rehabilitasi_desc};
 
     public static double countBMI(double height, double weight) {
         double res;
@@ -344,4 +346,64 @@ public class Formulas {
                 return "";
         }
     }
+
+    public static String getBishopString(int result) {
+        if(result < 5) {
+            return "Unlikely to start without induction";
+        } else if(result >= 9) {
+            return "Most likely commence spontaneously";
+        } else {
+            return "Probably need induction";
+        }
+    }
+
+    public static int getBishopScore(int position, int consistency, int effacement, int dilation, int fetal) {
+        return position + consistency + effacement + dilation + fetal;
+    }
+
+    public static int getDaldiyonoScore(int... points) {
+        int res = 0;
+        for(int point : points) {
+            res += point;
+        }
+        return res;
+    }
+
+    public static float getDaldiyonoString(int score, int weight) {
+        return score/15.00f * weight * 100;
+    }
+
+    public static int getMaintenanceFluid(int weight) {
+        int res = 0;
+        int b = weight - 10;
+        if(b < 0) {
+            return weight * 100;
+        } else {
+            res += 10 * 100;
+            int c = b - 10;
+            if(c < 0) {
+                return res + b * 50;
+            } else {
+                res += ((10 * 50) + (c * 20));
+                return res;
+            }
+        }
+    }
+
+    public static double getFluidDropRate(int volume) {
+        return Math.ceil(volume * 20.00f / 24 / 60);
+    }
+
+    public static float getMaxVolumeO2(float distance, int age, int height, int weight, int sex) {
+        return (0.053f * distance) + (0.022f * age) + (0.032f * height) + (0.164f * weight - 2.228f * sex) - 2.287f;
+    }
+
 }
+
+
+
+
+
+
+
+

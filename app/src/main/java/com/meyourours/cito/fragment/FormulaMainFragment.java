@@ -46,7 +46,7 @@ public class FormulaMainFragment extends Fragment {
 
     private static class PagerAdapter extends FragmentStatePagerAdapter {
         Fragment[] fragments = {new CategoryFragment(), new MostUsedFormulaFragment(),
-                                new RecentFormulaFragment()};
+                                new RecentFormulaFragment(), new SearchFormulaFragment()};
         public PagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -65,6 +65,8 @@ public class FormulaMainFragment extends Fragment {
                     return "Sering";
                 case 2:
                     return "Terbaru";
+                case 3:
+                    return "Cari";
                 default:
                     return null;
             }
