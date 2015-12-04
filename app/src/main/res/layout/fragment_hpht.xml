@@ -21,14 +21,31 @@
         android:textSize="24sp"
         fontPath="AbadiCondensed.ttf"/>
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
+        android:id="@+id/header_visit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_picker"
+        android:text="Tanggal Rujukan"
+        fontPath="AbadiCondensed.ttf"/>
+    <com.rey.material.widget.TextView
+        style="@style/TextBody"
+        android:id="@+id/date_visit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_visit"
+        android:text="31 Januari 2015"
+        android:textSize="24sp"
+        fontPath="AbadiCondensed.ttf"/>
+    <com.rey.material.widget.TextView
         android:id="@+id/label_hpht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_below="@+id/date_picker"
-        android:text="Perkiraan"
+        android:layout_below="@+id/date_visit"
+        android:text="Perkiraan Kelahiran"
         android:textSize="32sp"
         android:textColor="@color/colorPrimaryDark"
         fontPath="AbadiCondensed.ttf"/>
@@ -41,7 +58,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:padding="8dp"
-        android:layout_below="@+id/date_picker"
+        android:layout_alignBottom="@id/label_hpht"
         android:layout_toRightOf="@+id/label_hpht"
         android:text=""
         android:textSize="24sp"
