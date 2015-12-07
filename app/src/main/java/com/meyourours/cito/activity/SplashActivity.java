@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.meyourours.cito.R;
+import com.squareup.picasso.Picasso;
 
 
 public class SplashActivity extends Activity {
@@ -19,6 +21,9 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        ImageView splashImage = (ImageView) findViewById(R.id.splash_image);
+        Picasso.with(this).load(R.drawable.img_splash)
+                .into(splashImage);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
