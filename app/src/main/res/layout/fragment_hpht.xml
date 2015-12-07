@@ -51,20 +51,16 @@
         fontPath="AbadiCondensed.ttf"/>
 
     <com.rey.material.widget.TextView
+        style="@style/TextBody"
         android:id="@+id/text_hpht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:padding="8dp"
-        android:layout_alignBottom="@id/label_hpht"
-        android:layout_toRightOf="@+id/label_hpht"
-        android:text=""
+        android:layout_below="@+id/label_hpht"
+        android:text="N/A"
         android:textSize="24sp"
         android:textColor="@color/colorTextWhite"
-        android:background="@color/colorPrimaryDark"
-        fontPath="AbadiCondensed.ttf"/>
+        android:background="@color/colorPrimaryDark"/>
 
     <com.rey.material.widget.TextView
         style="@style/TextBody"
