@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.meyourours.cito.CitoApplication;
 import com.meyourours.cito.fragment.CategoryFragment;
 import com.meyourours.cito.R;
 import com.meyourours.cito.adapter.FormulaDetailAdapter;
@@ -24,10 +27,16 @@ public class FormulasActivity extends ActionBarActivity implements AdapterView.O
     private int formulaList;
     FormulaDetailAdapter adapter;
     int categoryId;
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formula_detail);
+
+        CitoApplication application = (CitoApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if(toolbar != null) {
             setSupportActionBar(toolbar);
@@ -49,6 +58,13 @@ public class FormulasActivity extends ActionBarActivity implements AdapterView.O
         detailList.setAdapter(adapter);
         detailList.setOnItemClickListener(this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTracker.setScreenName("FormulaActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

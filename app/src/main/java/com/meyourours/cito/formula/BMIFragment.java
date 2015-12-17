@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.meyourours.cito.CitoApplication;
 import com.meyourours.cito.R;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.TextView;
@@ -22,12 +25,19 @@ public class BMIFragment extends FormulaFragment {
     EditText editTextHeight;
     TextView textViewResult;
     TextView textViewBMI;
+    private Tracker mTracker;
 
     public BMIFragment() {
         // Required empty public constructor
         setmId(0);
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CitoApplication application = (CitoApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +48,13 @@ public class BMIFragment extends FormulaFragment {
         editTextWeight = (EditText) rootView.findViewById(R.id.edit_weight);
         editTextHeight = (EditText) rootView.findViewById(R.id.edit_height);
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("BMIFragment");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

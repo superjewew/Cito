@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.meyourours.cito.CitoApplication;
 import com.meyourours.cito.R;
 import com.squareup.picasso.Picasso;
 
@@ -15,11 +18,15 @@ import com.squareup.picasso.Picasso;
 public class SplashActivity extends Activity {
 
     private static int SPLASH_TIMEOUT = 2000;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        CitoApplication application = (CitoApplication) getApplication();
+        mTracker = application.getDefaultTracker();
 
         ImageView splashImage = (ImageView) findViewById(R.id.splash_image);
         Picasso.with(this).load(R.drawable.img_splash)
@@ -32,6 +39,13 @@ public class SplashActivity extends Activity {
                 finish();
             }
         }, SPLASH_TIMEOUT);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTracker.setScreenName("SplashActivity");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override
