@@ -54,6 +54,8 @@ public class SkorNuryFragment extends FormulaFragment {
 
         spinnerSex.setOnItemClickListener(listener);
 
+        setTrackerName("SkorNuryFragment");
+
         return rootView;
     }
 

@@ -27,7 +27,8 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MostUsedFormulaFragment extends Fragment implements AdapterView.OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor> {
+public class MostUsedFormulaFragment extends TrackerFragment
+        implements AdapterView.OnItemClickListener, LoaderManager.LoaderCallbacks<Cursor> {
 
     @Bind(R.id.list_most_used)
     ListView listMostUsed;
@@ -49,6 +50,8 @@ public class MostUsedFormulaFragment extends Fragment implements AdapterView.OnI
         ButterKnife.bind(this, rootView);
 
         fillData();
+
+        setTrackerName("MostUsedFragment");
 
         return rootView;
     }

@@ -1,11 +1,13 @@
 package com.meyourours.cito.formula;
 
-import android.support.v4.app.Fragment;
+import com.meyourours.cito.fragment.TrackerFragment;
 
 /**
  * Created by norman on 7/30/15.
  */
-public class FormulaFragment extends Fragment {
+public class FormulaFragment extends TrackerFragment {
+
+    public int mId;
 
     public int getmId() {
         return mId;
@@ -14,8 +16,6 @@ public class FormulaFragment extends Fragment {
     public void setmId(int mId) {
         this.mId = mId;
     }
-
-    public int mId;
 
 
 }

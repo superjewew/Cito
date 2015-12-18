@@ -65,6 +65,7 @@ public class SkalaDepresiFragment extends FormulaFragment implements CompoundBut
         checkBox14.setOnCheckedChangeListener(this);
         checkBox15.setOnCheckedChangeListener(this);
 
+        setTrackerName("SkalaDepresiFragment");
 
         return rootView;
     }

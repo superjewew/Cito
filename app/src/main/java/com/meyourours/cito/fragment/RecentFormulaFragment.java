@@ -28,7 +28,8 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RecentFormulaFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, AdapterView.OnItemClickListener {
+public class RecentFormulaFragment extends TrackerFragment implements
+        LoaderManager.LoaderCallbacks<Cursor>, AdapterView.OnItemClickListener {
 
     @Bind(R.id.list_recent) ListView listRecent;
 
@@ -50,6 +51,8 @@ public class RecentFormulaFragment extends Fragment implements LoaderManager.Loa
 
         fillData();
 
+        setTrackerName("RecentFormulaFragment");
+
         return rootView;
     }
 
@@ -65,7 +68,12 @@ public class RecentFormulaFragment extends Fragment implements LoaderManager.Loa
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] projection = {FormulaTable.COLUMN_ID, FormulaTable.COLUMN_NAME};
-        CursorLoader cursorLoader = new CursorLoader(getActivity(), FormulaContentProvider.CONTENT_URI, projection, null, null, FormulaTable.COLUMN_USE_TIME + " DESC");
+        CursorLoader cursorLoader = new CursorLoader(getActivity(),
+                FormulaContentProvider.CONTENT_URI,
+                projection,
+                null,
+                null,
+                FormulaTable.COLUMN_USE_TIME + " DESC");
         return cursorLoader;
     }
 

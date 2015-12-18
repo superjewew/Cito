@@ -47,6 +47,9 @@ public class SkorCURBFragment extends FormulaFragment implements CompoundButton.
         checkBoxBun.setOnCheckedChangeListener(this);
         checkBoxRespiratory.setOnCheckedChangeListener(this);
         checkBoxBloodPressure.setOnCheckedChangeListener(this);
+
+        setTrackerName("SkorCURBFragment");
+
         return rootView;
     }
 

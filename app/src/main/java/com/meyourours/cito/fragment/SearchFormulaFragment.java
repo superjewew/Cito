@@ -1,9 +1,7 @@
 package com.meyourours.cito.fragment;
 
 
-import android.database.Cursor;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.meyourours.cito.R;
-import com.meyourours.cito.database.FormulaTable;
 import com.meyourours.cito.formula.Formulas;
 import com.rey.material.widget.EditText;
 
@@ -24,7 +21,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFormulaFragment extends Fragment {
+public class SearchFormulaFragment extends TrackerFragment {
 
     EditText searchEdit;
     ListView resultList;
@@ -56,6 +53,8 @@ public class SearchFormulaFragment extends Fragment {
             }
         });
         searchEdit.addTextChangedListener(searchWatcher);
+
+        setTrackerName("SearchFormulaFragment");
 
         return rootView;
     }

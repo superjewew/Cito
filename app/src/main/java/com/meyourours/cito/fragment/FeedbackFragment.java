@@ -16,6 +16,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.meyourours.cito.CitoApplication;
 import com.meyourours.cito.GMailSender;
 import com.meyourours.cito.R;
 import com.rey.material.widget.EditText;
@@ -39,6 +42,7 @@ public class FeedbackFragment extends Fragment {
     private EditText feedbackEditText;
     private String name;
     private MaterialDialog dialog;
+    private Tracker mTracker;
 
     /**
      * Use this factory method to create a new instance of
@@ -65,11 +69,20 @@ public class FeedbackFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CitoApplication application = (CitoApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("FeedbackFragment");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     @Override

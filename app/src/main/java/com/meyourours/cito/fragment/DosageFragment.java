@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.meyourours.cito.CitoApplication;
 import com.meyourours.cito.R;
 import com.meyourours.cito.formula.Formulas;
 import com.rey.material.widget.EditText;
@@ -26,12 +29,19 @@ public class DosageFragment extends Fragment {
     TextView textDosage;
     int medicine, age, weight;
     boolean isAgeExist, isWeightExist;
+    private Tracker mTracker;
 
 
     public DosageFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        CitoApplication application = (CitoApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,6 +71,13 @@ public class DosageFragment extends Fragment {
         editWeight.addTextChangedListener(weightWatcher);
 
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("DosageFragment");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
     }
 
     private final TextWatcher ageWatcher = new TextWatcher() {

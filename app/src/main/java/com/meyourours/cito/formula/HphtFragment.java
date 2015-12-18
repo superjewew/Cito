@@ -87,6 +87,8 @@ public class HphtFragment extends FormulaFragment implements View.OnClickListene
         datePicker.setOnClickListener(this);
         visitPicker.setOnClickListener(this);
 
+        setTrackerName("HphtFragment");
+
         return rootView;
     }
 

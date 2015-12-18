@@ -1,4 +1,4 @@
-package com.meyourours.cito;
+package com.meyourours.cito.fragment;
 
 
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.meyourours.cito.R;
 import com.meyourours.cito.formula.Formulas;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
@@ -26,7 +27,7 @@ import java.text.DecimalFormat;
  * Use the {@link EBMFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EBMFragment extends Fragment {
+public class EBMFragment extends TrackerFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -140,6 +141,8 @@ public class EBMFragment extends Fragment {
 //                adapter.notifyDataSetChanged();
 //            }
 //        });
+
+        setTrackerName("EBMFragment");
 
         return rootView;
     }

@@ -120,6 +120,8 @@ public class DaldiyonoFragment extends FormulaFragment {
         checkBoxAge1.setOnCheckedChangeListener(listener);
         checkBoxAge2.setOnCheckedChangeListener(listener);
 
+        setTrackerName("DaldiyonoFragment");
+
         return rootView;
     }
 

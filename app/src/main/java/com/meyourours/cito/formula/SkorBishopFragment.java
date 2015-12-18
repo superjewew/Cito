@@ -74,6 +74,8 @@ public class SkorBishopFragment extends FormulaFragment {
         spinnerFetal.setSelection(0);
         spinnerFetal.setOnItemSelectedListener(listener);
 
+        setTrackerName("SkorBishopFragment");
+
         return rootView;
     }
 

@@ -76,6 +76,8 @@ public class HollidaySegarFragment extends FormulaFragment {
 
         editWeight.addTextChangedListener(weightWatcher);
 
+        setTrackerName("HollidaySegarFragment");
+
         return rootView;
     }
 

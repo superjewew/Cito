@@ -16,10 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.meyourours.cito.CitoApplication;
-import com.meyourours.cito.EBMFragment;
+import com.meyourours.cito.fragment.EBMFragment;
 import com.meyourours.cito.R;
 import com.meyourours.cito.fragment.DosageFragment;
 import com.meyourours.cito.fragment.FeedbackFragment;
@@ -39,9 +37,6 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        CitoApplication application = (CitoApplication) getApplication();
-        mTracker = application.getDefaultTracker();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -100,8 +95,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        mTracker.setScreenName("HomeActivity");
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
     }
 
     @Override
